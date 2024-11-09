@@ -1,4 +1,4 @@
-// npx nodemon --exec go run main.go --signal SIGTERM
+// npx nodemon --exec go run ./cmd/web --signal SIGTERM -e go
 package main
 
 import (

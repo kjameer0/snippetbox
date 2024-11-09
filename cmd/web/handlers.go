@@ -10,14 +10,16 @@ import (
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Server", "Go")
-	templateSet, err := template.ParseFiles("./ui/html/pages/home.tmpl")
+	// base template must always come first in slice
+	files := []string{"./ui/html/base.tmpl", "./ui/html/pages/home.tmpl"}
+	templateSet, err := template.ParseFiles(files...)
 	if err != nil {
 		log.Print(err.Error())
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
 	//nil in Execute means there is no custom data to add to the template
-	err = templateSet.Execute(w, nil)
+	err = templateSet.ExecuteTemplate(w, "base", nil)
 	if err != nil {
 		log.Print(err.Error())
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
