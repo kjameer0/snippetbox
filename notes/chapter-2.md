@@ -30,6 +30,7 @@ The following quote is from page 41 of "Let's Go"
 handlers has a Write() method, it satisfies the io.Writer interface... But at a practical level, it means that any functions where you see an io.Writer parameter, you can pass in your http.ResponseWriter value and whatever is being written will subsequently be sent as the body of the HTTP response."
 io.Writer is an interface that implements one method that returns a string, Write, If another type has a Write method that returns a string, it satisfies or implements the io.Writer interface. Any function that takes an io.Writer interface type as a parameter can be used by any type that has a Write method.
 
+The internal directory code can only be imported by folders inside parent folder. Other projects that download your code can't use the code in the internal folder.
 
 ## Questions
 
