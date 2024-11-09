@@ -11,7 +11,7 @@ import (
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Server", "Go")
 	// base template must always come first in slice
-	files := []string{"./ui/html/base.tmpl", "./ui/html/pages/home.tmpl"}
+	files := []string{"./ui/html/base.tmpl", "./ui/html/pages/home.tmpl", "./ui/html/partials/nav.tmpl"}
 	templateSet, err := template.ParseFiles(files...)
 	if err != nil {
 		log.Print(err.Error())
