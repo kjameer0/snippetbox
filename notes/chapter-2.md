@@ -33,6 +33,14 @@ io.Writer is an interface that implements one method that returns a string, Writ
 The internal directory code can only be imported by folders inside parent folder. Other projects that download your code can't use the code in the internal folder.
 
 I learned that malicious actors can move through my file system with relative paths if path names coming from users aren't cleaned.
+
+To use mux.Handle(path, handler) the second parameter needs to already be a handler. mux.HandlerFunc(path, func) takes a regular function that matches the ServeHttp function signature and coerces it to the Handler interface.
+
+ServeMux satisfies the http.Handler interface.
+
+Go web apps are just chains of http handlers
+
+
 ## Questions
 
 - what exact type is a http.Request?
