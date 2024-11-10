@@ -7,8 +7,12 @@
 ### Command-Line Flags
 
 - Command line flags are good when you are managing config settings for running an app.
+- Boolean flags are automatically true
 
 ### Logging
+
+- log/slog go package has many tools for structured logs
+- slog.String() and slog.Any() and such can be used to add key value pairs to a log
 
 ### Dependencies
 
