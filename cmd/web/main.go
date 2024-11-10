@@ -15,7 +15,7 @@ func main() {
 	// StripPrefix gets rid of /static from the URL so we aren't searching
 	// for /static/static/path-to-asset
 	// create a get route for all assets
-	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
+	mux.Handle("GET /static/", http.StripPrefix("/static", neuter(fileServer)))
 
 	mux.HandleFunc("GET /{$}", home)
 	mux.HandleFunc("GET /snippet/view/{id}", snippetView)
