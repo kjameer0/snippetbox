@@ -8,6 +8,7 @@
 
 - Command line flags are good when you are managing config settings for running an app.
 - Boolean flags are automatically true
+- flag.Int() and flag.String() convert command flags into appropriate types
 
 ### Logging
 
